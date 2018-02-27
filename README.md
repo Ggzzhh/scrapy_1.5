@@ -7,9 +7,9 @@ Scrapy文档部分摘选
 
 --------
 
-<span id='one'>一、命令行工具</span>
+<span name='one'>一、命令行工具</span>
 ----------------
-#### <span id='global'>全局命令</span>
+#### <span name='global'>全局命令</span>
 * __startproject__
     * 句法: `scrapy startproject <project_name> [project_dir]`
     * 需要项目: None
@@ -135,7 +135,7 @@ Scrapy文档部分摘选
         $ scrapy runspider myspider.py
         [ ... spider starts crawling ... ]
         ```
-#### <span id='object'>项目命令</span>
+#### <span name='object'>项目命令</span>
 * __crawl__
     * 句法: `scrapy crawl <spider>`
     * 需要项目: yes
