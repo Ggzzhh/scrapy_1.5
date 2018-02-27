@@ -233,6 +233,3 @@ Scrapy文档部分摘选
 COMMANDS_MODULE  =  'mybot.commands'
 ```
 ---
-<span id='two'>二、spiders</span>
-----------------
-暂无
