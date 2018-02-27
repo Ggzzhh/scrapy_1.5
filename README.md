@@ -114,6 +114,7 @@ Scrapy文档部分摘选
          'Server': ['Apache/2.2.3 (CentOS)']}
         ```
 * __view__
+    * 需要先`fetch`抓取项目或者在shell中使用
     * 句法: `scrapy view <url>`
     * 需要项目: No
     * 在浏览器中打开给定的URL，因为Scrapy蜘蛛会“看到”它。
@@ -132,8 +133,7 @@ Scrapy文档部分摘选
     * 显示当前版本,如果与-v它一起使用，还会打印`Python`，Twisted`和`Platform`信息，这对于错误报告很有用。
     * 用法：
         ```
-        $ scrapy runspider myspider.py
-        [ ... spider starts crawling ... ]
+        $ scrapy version
         ```
 #### 项目命令
 * __crawl__
@@ -148,7 +148,7 @@ Scrapy文档部分摘选
 * __check__
     * 句法: `scrapy check [-l] <spider>`
     * 需要项目: yes
-    * 开始检查scrapy的项目？合同
+    * 测试scrapy的合同
     * 用法：
         ```
         $ scrapy check -l
