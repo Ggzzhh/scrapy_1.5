@@ -1,15 +1,15 @@
 Scrapy文档部分摘选
 ================
-### [命令行工具](#one)
-* [全局命令](#global)
-* [项目命令](#object)
-* [自定义命令](#defined)
+### [命令行工具](#命令行工具)
+* [全局命令](#全局命令)
+* [项目命令](#项目命令)
+* [自定义命令](#自定义命令)
 
 --------
 
-<span name='one'>一、命令行工具</span>
+命令行工具
 ----------------
-#### <span name='global'>全局命令</span>
+#### 全局命令
 * __startproject__
     * 句法: `scrapy startproject <project_name> [project_dir]`
     * 需要项目: None
@@ -135,7 +135,7 @@ Scrapy文档部分摘选
         $ scrapy runspider myspider.py
         [ ... spider starts crawling ... ]
         ```
-#### <span name='object'>项目命令</span>
+#### 项目命令
 * __crawl__
     * 句法: `scrapy crawl <spider>`
     * 需要项目: yes
@@ -220,7 +220,7 @@ Scrapy文档部分摘选
     * 句法: `scrapy bench`
     * 需要项目: No
     * 运行一个快速基准测试--[Benchmarking](#Benchmarking)
-#### <span id='defined'>自定义命令</span>
+#### 自定义命令
 您也可以使用该`COMMANDS_MODULE`设置添加自定义项目命令。
 有关如何实现命令的示例，请参阅[scrapy/commands](https://github.com/scrapy/scrapy/tree/master/scrapy/commands)
 ##### COMMANDS_MODULE
