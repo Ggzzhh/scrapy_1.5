@@ -233,3 +233,4 @@ Scrapy文档部分摘选
 COMMANDS_MODULE  =  'mybot.commands'
 ```
 ---
+更多内容参见：[scrapy文档](https://docs.scrapy.org/en/latest/topics/settings.html#topics-settings-ref)
