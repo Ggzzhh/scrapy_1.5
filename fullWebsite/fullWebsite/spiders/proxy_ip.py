@@ -14,7 +14,7 @@ class Proxies:
     存储到txt中
     """
     def __init__(self):
-        self.redis = redis.StrictRedis()
+        self.redis = redis.StrictRedis(decode_responses=True)
         self.http = []
         self.https = []
         self.max_threads = 20
@@ -61,13 +61,13 @@ class Proxies:
         # 清除两个键
         self.redis.delete('http', 'https')
         for i in self.http:
-            self.redis.lpush('http', i)
+            self.redis.lpush('http', i['http'])
 
         for i in self.https:
-            self.redis.lpush('https', i)
+            self.redis.lpush('https', i['https'])
 
         print('------存储完毕，存储地址为：{} 以及 {}------'
-              .format('http.txt', 'https.txt'))
+              .format('redis:http', 'redis:https'))
 
     def get_ips(self):
         """运行所有获取免费ip的函数"""
@@ -90,7 +90,6 @@ class Proxies:
         else:
             url = 'https://checkip.amazonaws.com'
         try:
-            time.sleep(0.3)
             requests.get(url, proxies=proxies, timeout=2.01)
         except:
             # print('代理: {} 请求超时'.format(proxies))

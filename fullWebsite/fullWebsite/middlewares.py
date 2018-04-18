@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
-
+# from fullWebsite.settings import PROXIES
+from random import choice
 # Define here the models for your spider middleware
 #
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
+from scrapy.contrib.downloadermiddleware.httpproxy import HttpProxyMiddleware
 
 
 class FullwebsiteSpiderMiddleware(object):
@@ -71,7 +73,11 @@ class FullwebsiteDownloaderMiddleware(object):
     def process_request(self, request, spider):
         # Called for each request that goes through the downloader
         # middleware.
-
+        # proxies = PROXIES
+        # if len(proxies) > 0:
+        #     proxy = choice(proxies)
+        #     request.meta['proxy'] = 'http://' + proxy
+        #     print('代理设置完成:' + proxy)
         # Must either:
         # - return None: continue processing this request
         # - or return a Response object
