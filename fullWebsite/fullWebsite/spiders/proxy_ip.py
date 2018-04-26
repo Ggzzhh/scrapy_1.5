@@ -86,9 +86,9 @@ class Proxies:
     def go_verify(self, proxies):
         """验证代理是否可用"""
         if proxies.get('http'):
-            url = 'http://checkip.amazonaws.com'
+            url = 'http://dl.3dmgame.com/pc/cn'
         else:
-            url = 'https://checkip.amazonaws.com'
+            url = 'https://dl.3dmgame.com/pc/cn'
         try:
             requests.get(url, proxies=proxies, timeout=2.01)
         except:
