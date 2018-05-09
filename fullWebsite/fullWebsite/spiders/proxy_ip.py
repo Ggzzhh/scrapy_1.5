@@ -86,11 +86,12 @@ class Proxies:
     def go_verify(self, proxies):
         """验证代理是否可用"""
         if proxies.get('http'):
-            url = 'http://dl.3dmgame.com/pc/cn'
+            url = 'http://www.zhihu.com'
         else:
-            url = 'https://dl.3dmgame.com/pc/cn'
+            url = 'https://www.zhihu.com'
         try:
-            requests.get(url, proxies=proxies, timeout=2.01)
+            requests.get(url, proxies=proxies, timeout=3.01,
+                         headers=self.headers)
         except:
             # print('代理: {} 请求超时'.format(proxies))
             return False
@@ -102,7 +103,7 @@ class Proxies:
 
     def proxy_xici(self):
         """抓取xici代理中的高匿代理"""
-        base_url = 'http://www.xicidaili.com/nn/{}'
+        base_url = 'http://www.xicidaili.com/wn/{}'
         for i in range(1, 4):
             time.sleep(0.5)
             res = requests.get(base_url.format(i), headers=self.headers)
