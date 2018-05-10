@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-from random import choice
-from .settings import PROXIES
+
 # Define here the models for your spider middleware
 #
 # See documentation in:
@@ -9,7 +8,7 @@ from .settings import PROXIES
 from scrapy import signals
 
 
-class SrTestSpiderMiddleware(object):
+class DoubanSpiderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
@@ -57,7 +56,7 @@ class SrTestSpiderMiddleware(object):
         spider.logger.info('Spider opened: %s' % spider.name)
 
 
-class SrTestDownloaderMiddleware(object):
+class DoubanDownloaderMiddleware(object):
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
@@ -72,10 +71,7 @@ class SrTestDownloaderMiddleware(object):
     def process_request(self, request, spider):
         # Called for each request that goes through the downloader
         # middleware.
-        if not request.meta.get('proxy') and PROXIES:
-            proxy = PROXIES[-1]
-            request.meta['proxy'] = 'https://' + proxy
-            print('代理设置完成:' + proxy)
+
         # Must either:
         # - return None: continue processing this request
         # - or return a Response object
@@ -86,14 +82,7 @@ class SrTestDownloaderMiddleware(object):
 
     def process_response(self, request, response, spider):
         # Called with the response returned from the downloader.
-        # if response.status != 200:
-        #     try:
-        #         PROXIES.pop(0)
-        #     except:
-        #         print('异常')
-        #         print(request.meta)
-        #         request.meta['proxy'] = PROXIES[0]
-        #     return request
+
         # Must either;
         # - return a Response object
         # - return a Request object
