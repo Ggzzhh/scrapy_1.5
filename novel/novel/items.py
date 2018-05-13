@@ -17,9 +17,8 @@ class NovelItem(scrapy.Item):
     last_update = scrapy.Field()
     last_chapter = scrapy.Field()
     chapter_count = scrapy.Field()
-    chapter_id = scrapy.Field()
+    novel_id = scrapy.Field()
     status = scrapy.Field()
-
     chapters = scrapy.Field()
 
     pass
@@ -27,4 +26,5 @@ class NovelItem(scrapy.Item):
 
 class ChapterItem(scrapy.Item):
     chapter_id = scrapy.Field()
+    chapter_name = scrapy.Field()
     chapter_cent = scrapy.Field()

@@ -74,7 +74,7 @@ class NovelDownloaderMiddleware(object):
         # middleware.
         if request.meta.get('PhantomJS'):
             driver = webdriver.PhantomJS(
-                executable_path="D:\phantomjs\\bin\\phantomjs.exe")
+                executable_path=r"/Users/gzh/phantomjs/bin/phantomjs")
             driver.get(request.url)
             content = driver.page_source.encode('utf-8')
             driver.quit()
